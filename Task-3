@@ -1,0 +1,5 @@
+Create S3 bucket:
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html
+
+Upload a file into the bucket:
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-an-object-bucket.html
