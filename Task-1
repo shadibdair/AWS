@@ -1,0 +1,16 @@
+## Task on AWS:
+
+AES new account
+Create a new account and make sure you get notifications if you waste too much money.
+Create a new AWS Accout
+Here are some important details to notice:
+	- One email address per aws account
+	- This address will be linked to the AWS root account
+	- Choose basic support plan (see here for more details)
+So follow these instruction to create your new account.
+Configure a Billing Alarm
+A billing alarm will send you an email notification if you spend too much money on AWS.
+Here are some notes:
+	- The alarm is based on the aws cloudwatch service, this is the service that discovers the metrics that sets the alarm.
+	- The email notification is created by SNS (Simple Notification Service), a service that is used to send email messages and SMS messages.
+	- Use this link to configure the billing alarm.
