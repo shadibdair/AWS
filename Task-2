@@ -1,0 +1,13 @@
+## Task on AWS:
+
+
+Launch an EC2 instance using the console
+Launch an instance
+Instructions:
+Use the browser in your linux machine, so that you can download the key-pair
+Use this link to launch your machine.
+Copy the <key-pair>.pem file to ~/.ssh directory.
+Change the file permission so that only user has just read permission.
+Try to connect to the new instance.
+Example:
+ssh -i <key-pair>.pem ec2-user@15.152.38.25
