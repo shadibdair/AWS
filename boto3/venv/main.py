@@ -10,3 +10,6 @@ def main():
     username = input("Enter name of the new user: ")
     c_u(username)
     print("GroupName is: " + username)
+
+
+main()
