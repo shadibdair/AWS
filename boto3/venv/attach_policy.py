@@ -1,11 +1,14 @@
 import boto3
-
+from create_policy import createPolicy as get_arn
 
 def attachRoleUser():
     client = boto3.client('iam')
     response = client.attach_user_policy(
-    PolicyArn='arn:aws:iam::aws:policy/AdministratorAccess',
-    UserName='Halland',
+    PolicyArn = get_arn.arn,
+    UserName = 'Dan',
     )
 
-    print(response)
+    #print(response)
+    print("Done \t", response.PolicyArn, response.UserName)
+
+#attachRoleUser()
