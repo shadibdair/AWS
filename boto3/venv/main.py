@@ -5,13 +5,13 @@ from create_policy import createPolicy as c_p
 from attach_policy import attachRoleUser as a_r_u
 
 def main():
-    groupname = input("Enter name of the new group: ")
-    c_g(groupname)
-    print("GroupName is: " + groupname)
+    # groupname = input("Enter name of the new group: ")
+    # c_g(groupname)
+    # print("GroupName is: " + groupname)
 
-    username = input("Enter name of the new user: ")
-    c_u(username)
-    print("GroupName is: " + username)
+    # username = input("Enter name of the new user: ")
+    # c_u(username)
+    # print("GroupName is: " + username)
 
 
     print("Creating new policy :\n")

@@ -1,5 +1,4 @@
 import json
-
 import boto3
 
 def createPolicy():
@@ -21,8 +20,10 @@ def createPolicy():
         ]
     }
     response = iam.create_policy(
-    PolicyName='boto3-policy-new',
-    PolicyDocument=json.dumps(my_managed_policy)
-    arn = PolicyDocument["Arn"]
+        PolicyName='boto3-policy-new',
+        PolicyDocument=json.dumps(my_managed_policy)
     )
-    #print(response)
+
+    print(response)
+
+createPolicy()
