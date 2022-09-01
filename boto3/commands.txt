@@ -3,3 +3,5 @@
 - aws iam list-users
 
 - aws s3 ls
+
+- boto3 -> Create policy -> Attached policy to user
