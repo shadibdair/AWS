@@ -1,0 +1,28 @@
+Your job is to create a new secure network for your workplace.
+
+Notes:
+  - We are not going to use the AWS provided VPC, SG, Route table etc....
+
+1. Create a new VPC
+  Q: Provide two best practices when creating a VPN
+2. Create a new subnet
+3. Create a route table
+  Q: Can you sniff a packet between instances in AWS?
+	Q: What is the implied router and how is it different from route table?
+	Q: How many ENI should I attach to my instances if my instance is in between zones?
+4. Associate the subnet with the route table
+5. Create an EC2 machine in the new subnet and connect to it. Try to ping 8.8.8.8, explain what are you missing?
+6. Create the missing 2 pieces to be able to ping the internet.
+7. Q: What is the benefit of using a NAT gateway instead of Internet Gateway?
+8. Create another EC2 in the same subnet, can you ping the first machine? If not, create and specify what is missing.
+
+Today's lecture:
+	1. SG vs ACLs
+	2. S3 ACLs
+	3. Costs in creating resources in different AZs
+	4. VPC peering & Endpoints
+
+Bonus:
+  You have the following issue:
+	Your company is creating and destoying machines automatically everyday. You heard from the developrs that some of the machines do not communicate well with the others.
+	How would you solve this? (AWS has a solution for this, think cloudwatch....)
