@@ -1,0 +1,43 @@
+## What are we going to do:
+- SHADI BADIR -
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Create a new VPC
+  ** aws ec2 create-vpc --cidr-block 10.0.0.0/16
+  Q: Provide two best practices when creating a VPC
+     - When you add subnets to your VPC to host your application, create them in multiple Availability Zones. An Availability Zone is one or more discrete data centers with redundant power, networking, and connectivity in an AWS Region
+     - Use network ACLs to control access to your subnets and use security groups to control traffic to EC2 instances in your subnets.
+     - Manage access to AWS VPC resources and APIs using AWS Identity and Access Management (IAM) identity federation, users, and roles.
+     - Use Amazon CloudWatch with VPC flow logs to monitor the IP traffic going to and from network interfaces in your VPC.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Create a new subnet
+    - aws ec2 create-subnet --vpc-id vpc-2f09a348 --cidr-block 10.0.1.0/24 --a eu-west-1a
+    - aws ec2 create-subnet --vpc-id vpc-2f09a348 --cidr-block 10.0.2.0/24 --a eu-west-1b
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Create a route table
+    - aws ec2 create-internet-gateway
+    - aws ec2 create-route —destination-cidr-block 0.0.0.0/0 —gateway-id igw-c0a643a9
+    
+  Q: Can you sniff a packet between instances in AWS?
+    - Packet sniffing by other tenants It is not possible for a virtual instance running in promiscuous mode to receive or “sniff” traffic that is intended for a different virtual instance.
+	Q: What is the implied router and how is it different from route table?
+	  - A routing table is a set of rules, often viewed in table format, that is used to determine where data packets traveling over an Internet Protocol (IP) network will be directed. All IP-enabled devices, including routers and switches, use routing tables
+	Q: How many ENI should I attach to my instances if my instance is in between zones?
+	  - large instance may have up to three ENIs attached to it. The primary network interface for the instance counts as one, so you can attach an additional two ENIs to the instance. Because each task using the awsvpc network mode requires an ENI, you can typically only run two such tasks on this instance type
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Associate the subnet with the route table
+5. Create an EC2 machine in the new subnet and connect to it. Try to ping 8.8.8.8, explain what are you missing?
+6. Create the missing 2 pieces to be able to ping the internet.
+7. Q: What is the benefit of using a NAT gateway instead of Internet Gateway?
+8. Create another EC2 in the same subnet, can you ping the first machine? If not, create and specify what is missing.
+
+Today's lecture:
+	1. SG vs ACLs
+	2. S3 ACLs
+	3. Costs in creating resources in different AZs
+	4. VPC peering & Endpoints
+
+Bonus:
+  You have the following issue:
+	Your company is creating and destoying machines automatically everyday. You heard from the developrs that some of the machines do not communicate well with the others.
+	How would you solve this? (AWS has a solution for this, think cloudwatch....)
