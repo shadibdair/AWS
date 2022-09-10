@@ -15,8 +15,7 @@
     - aws ec2 create-subnet --vpc-id vpc-2f09a348 --cidr-block 10.0.2.0/24 --a eu-west-1b
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 3. Create a route table
-    - aws ec2 create-internet-gateway
-    - aws ec2 create-route —destination-cidr-block 0.0.0.0/0 —gateway-id igw-c0a643a9
+    - aws ec2 create-route-table --vpc-id vpc-a01106c2
     
   Q: Can you sniff a packet between instances in AWS?
     - Packet sniffing by other tenants It is not possible for a virtual instance running in promiscuous mode to receive or “sniff” traffic that is intended for a different virtual instance.
@@ -26,18 +25,18 @@
 	  - large instance may have up to three ENIs attached to it. The primary network interface for the instance counts as one, so you can attach an additional two ENIs to the instance. Because each task using the awsvpc network mode requires an ENI, you can typically only run two such tasks on this instance type
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 4. Associate the subnet with the route table
+    - aws ec2 associate-route-table --route-table-id rtb-22574640 --subnet-id subnet-9d4a7b6c
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 5. Create an EC2 machine in the new subnet and connect to it. Try to ping 8.8.8.8, explain what are you missing?
+   - VPC ACL,its outbound rule has rule 100 to allow any
+   - Security group
+   - Trrafic inbound / outbound.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 6. Create the missing 2 pieces to be able to ping the internet.
+   - aws ec2 create-network-acl --vpc-id vpc-a01106c2
+   - aws ec2 authorize-security-group-ingress --group-id sg-903004f8 --protocol tcp --port 22 --cidr x.x.x.x
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 7. Q: What is the benefit of using a NAT gateway instead of Internet Gateway?
+   - The benefits of using a NAT Gateway service are: It is a fully-managed service -- just create it and it works automatically, including fail-over. It can burst up to 10 Gbps (a NAT Instance is limited to the bandwidth associated with the EC2 instance type).
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 8. Create another EC2 in the same subnet, can you ping the first machine? If not, create and specify what is missing.
-
-Today's lecture:
-	1. SG vs ACLs
-	2. S3 ACLs
-	3. Costs in creating resources in different AZs
-	4. VPC peering & Endpoints
-
-Bonus:
-  You have the following issue:
-	Your company is creating and destoying machines automatically everyday. You heard from the developrs that some of the machines do not communicate well with the others.
-	How would you solve this? (AWS has a solution for this, think cloudwatch....)
