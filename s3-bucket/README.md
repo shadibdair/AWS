@@ -1,6 +1,6 @@
 S3-Bucket
 
-## Bucket Accessible fro the Internet
+## Bucket Accessible from the Internet
 * Create an s3 bucket.
 * Make sure your bucket is not blocked.
 * Create two objects: a text files and an image.
