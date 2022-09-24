@@ -2,3 +2,8 @@ Goal :
 Upload/update/deletion Events into S3 bucket will trigger an AWS Lambda function. Lambda function will then fetch the file details and 
 trigger AWS SNS Topic to send an Email notification to the stakeholders/subscribers with the file details and contents.
 
+
+
+Attach policy to role, to start recive logs on CloudWatch :
+- aws iam attach-role-policy --role-name your-role --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
