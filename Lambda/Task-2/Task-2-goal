@@ -7,3 +7,4 @@ trigger AWS SNS Topic to send an Email notification to the stakeholders/subscrib
 Attach policy to role, to start recive logs on CloudWatch :
 - aws iam attach-role-policy --role-name your-role --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 
+#New
