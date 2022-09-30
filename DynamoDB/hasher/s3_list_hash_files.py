@@ -12,15 +12,5 @@ for key in conn.list_objects(Bucket='mainbucketwithouthash')['Contents']:
     text = f.read()
     #print(text)
     hasher.update(text)
-    print(hasher.digest(),"\n")
+    print(hasher.hexdigest(),"\n")
     
-
-
-
-# Output:
-# text1.txt
-# text2.txt
-# text3.txt
-# text4.txt
-# text5.txt
-# text6.txt
