@@ -1,5 +1,7 @@
 from boto3 import client
 import hashlib
+import filecmp
+
 
 hasher = hashlib.sha256()
 
@@ -10,7 +12,11 @@ for key in conn.list_objects(Bucket='mainbucketwithouthash')['Contents']:
     # Hash
     f = open(file, "rb")
     text = f.read()
-    #print(text)
     hasher.update(text)
     print(hasher.hexdigest(),"\n")
+
+      
+# result = filecmp.cmp(file, filee)
+# print(result)
+
     
