@@ -31,7 +31,7 @@ def get_conf(conf_file):
 
 # The main function that connect to my user on AWS console, and insert the query.
 def dynamodb_demo():
-    creds = get_conf('AWS/DynamoDB/cred.json')
+    creds = get_conf('cred.json')
     print(creds)
     client = boto3.client('dynamodb', aws_access_key_id=creds['access-key-id'],
                                       aws_secret_access_key=creds['secret-access-key'],
