@@ -1,3 +1,4 @@
+# Imports
 import json
 import boto3
 
@@ -28,15 +29,15 @@ def get_conf(conf_file):
     except OSError :
         return {'access_key_id': None, 'secret_access_key': None, 'region': None}   
 
-
+# The main function that connect to my user on AWS console, and insert the query.
 def dynamodb_demo():
-    creds = get_conf('aws/cred.json')
+    creds = get_conf('AWS/DynamoDB/cred.json')
     print(creds)
     client = boto3.client('dynamodb', aws_access_key_id=creds['access-key-id'],
                                       aws_secret_access_key=creds['secret-access-key'],
                                       region_name=creds['region'])
-    insert_into_people(client, 'Dave', "09-________")
-    insert_into_people(client, 'Aisha', "09-^^^^^^^^")
+    insert_into_people(client, 'Shadi', "09-9827123")
+    insert_into_people(client, 'Mark', "09-9112632")
     
-
+# Calling the main function.
 dynamodb_demo()
