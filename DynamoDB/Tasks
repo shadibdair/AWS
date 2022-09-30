@@ -3,3 +3,13 @@
 - 1 several text files, with several lines in them
 
 - 2 Copy some of the files to other names
+
+- 3 Upload all of these to S3
+
+- 4 A Lambda function should download each file, compute a hash of the file.
+
+- 5 The function will update a DynamoDB table with the file details.
+
+- 6 If the file is new “so has not appeared before - even by another name” It will be uploaded to a 2nd bucket.
+
+- 7 Files that were already found will be deleted, but the count in the DB will be incremented.
