@@ -18,9 +18,7 @@ def create_bucket(bucket_name, region=None):
         return False
     return True
 
-
 def main():
     create_bucket("mainbucketwithouthash", None)
-
 
 main()
