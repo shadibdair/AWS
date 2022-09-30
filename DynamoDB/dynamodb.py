@@ -19,6 +19,7 @@ def insert_into_people(client, first_name, phone_number):
         ReturnConsumedCapacity='TOTAL'
     )
 
+# Function that read my cred
 def get_conf(conf_file):
     try:
         with open(conf_file, 'r') as credfile:
