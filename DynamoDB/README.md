@@ -11,4 +11,4 @@ DynamoDB is DB NoSQL
 * The data that I asked the DB to receive may not be the updated data.
 
 
-# Done tasks
+# Done tasks.
