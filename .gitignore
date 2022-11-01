@@ -1,0 +1,9 @@
+.DS_Store
+Lambda/.DS_Store
+DynamoDB/.DS_Store
+DynamoDB/DynamoDB.code-workspace
+boto3/.DS_Store
+boto3/venv/.DS_Store
+boto3/venv/lib/.DS_Store
+boto3/venv/lib/python3.10/.DS_Store
+boto3/venv/lib/python3.10/site-packages/.DS_Store
