@@ -16,3 +16,6 @@ private servers.
 - Your hosts:
   - One on each private subnet (you'll install a web server on those) 
   - One in the public network to connect to the private ones.
+
+
+In CloudFormation
