@@ -2,5 +2,5 @@
 ## Practicing AWS
 
 
--  Region -> AZs -> Servers
+-  Region -> AZs -> Server
 
